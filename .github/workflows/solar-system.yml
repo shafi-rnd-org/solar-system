@@ -6,7 +6,7 @@ on:
       - 'feature/*'
   workflow_dispatch:
 env:
-  MONGO_URI: 'mongodb+srv://kodekloud0.31arp.mongodb.net/'
+  MONGO_URI: 'mongodb+srv://kodekloud0.31arp.mongodb.net/superData'
   MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
   MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: setup nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18
 
       - name: install dependencies
         run: npm install
