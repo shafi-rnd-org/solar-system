@@ -5,6 +5,10 @@ on:
       - main
       - 'feature/*'
   workflow_dispatch:
+env:
+  MONGO_URI: 'mongodb+srv://kodekloud0.31arp.mongodb.net/superData'
+  MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
+  MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 jobs:
   unit-test:
     name: unit-test
@@ -20,6 +24,6 @@ jobs:
 
       - name: install dependencies
         run: npm install
-        
+
       - name: run unit test cases
         run: npm test
